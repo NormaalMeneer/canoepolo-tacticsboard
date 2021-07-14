@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D71C9BC3-3FF5-4C5D-A49E-33E9C2C8A79A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TacticsBoard</RootNamespace>
+    <AssemblyName>TacticsBoard</AssemblyName>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ApplicationIcon>Resources\Images\program.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>TacticsBoard.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>http://localhost/SportsTacticsBoard/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Build\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Build\Release\</OutputPath>
+    <DefineConstants>TRACE;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Resources\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Version\ver.cs">
+      <Link>ver.cs</Link>
+    </Compile>
+    <Compile Include="AVIWriter.cs" />
+    <Compile Include="Model\FieldObjects\LineRef.cs" />
+    <Compile Include="Model\Label\CustomLabel.cs" />
+    <Compile Include="Model\Label\CustomLabelCollection.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditFieldObjectLabelDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EditFieldObjectLabelDialog.Designer.cs">
+      <DependentUpon>EditFieldObjectLabelDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FieldObjects\NumberedCanoe.cs" />
+    <Compile Include="Model\FieldObjects\Player.cs" />
+    <Compile Include="Layout\LayoutEntry.cs" />
+    <Compile Include="Model\PlayingSurfaceTypes\Canoepolo-half.cs" />
+    <Compile Include="Model\PlayingSurfaceTypes\Canoepolo.cs" />
+    <Compile Include="Model\PlayingSurfaceTypes\IPlayingSurfaceType.cs" />
+    <Compile Include="Model\FieldObjects\Ball.cs" />
+    <Compile Include="Model\FieldObjects\FieldObject.cs" />
+    <Compile Include="View\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FieldObjects\Person.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\EditFieldObjectLabelDialog.resx">
+      <DependentUpon>EditFieldObjectLabelDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FieldControl.resx">
+      <DependentUpon>FieldControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SavedLayoutInformation.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SavedLayoutInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SelectPlayingSurfaceType.resx">
+      <DependentUpon>SelectPlayingSurfaceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Model\FieldObjects\Referee.cs" />
+    <Compile Include="Layout\Layout.cs" />
+    <Compile Include="View\FieldControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\FieldControl.Designer.cs">
+      <DependentUpon>FieldControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\LayoutSequence.cs" />
+    <Compile Include="GlobalizationAwareMessageBox.cs" />
+    <Compile Include="Layout\SavedLayout.cs" />
+    <Compile Include="View\SavedLayoutInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SavedLayoutInformation.Designer.cs">
+      <DependentUpon>SavedLayoutInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\SavedLayoutManager.cs" />
+    <Compile Include="View\SelectPlayingSurfaceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SelectPlayingSurfaceType.Designer.cs">
+      <DependentUpon>SelectPlayingSurfaceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app.config" />
+    <None Include="Resources\Images\NavBack.png" />
+    <None Include="Resources\Images\NavForward.png" />
+    <None Include="Resources\Images\DeleteHS.png" />
+    <None Include="Resources\Images\Help.png" />
+    <None Include="Resources\Images\GoToNextHS.png" />
+    <None Include="Resources\Images\GoToPrevious.png" />
+    <None Include="Resources\Images\NewDocumentHS.png" />
+    <None Include="Resources\Images\openHS.png" />
+    <None Include="Resources\Images\RestartHS.png" />
+    <None Include="Resources\Images\saveHS.png" />
+    <None Include="TacticsBoard.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\DataContainer_MoveFirstHS.png" />
+    <Content Include="Resources\Images\DataContainer_MoveLastHS.png" />
+    <Content Include="Resources\Images\DataContainer_MoveNextHS.png" />
+    <Content Include="Resources\Images\DataContainer_MovePreviousHS.png" />
+    <Content Include="Resources\Images\Edit_UndoHS.png" />
+    <Content Include="Resources\Images\PauseHS.png" />
+    <Content Include="Resources\Images\PlayHS.png" />
+    <Content Include="Resources\Images\RecordHS.png" />
+    <Content Include="Resources\Images\RepeatHS.png" />
+    <Content Include="Resources\Images\zoom.cur" />
+    <Content Include="Resources\Images\program.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
